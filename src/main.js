@@ -1,8 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import vuetify from './plugins/vuetify'
+import router from './router'
+import { PrismEditor } from 'vue-prism-editor';
+import 'vue-prism-editor/dist/prismeditor.min.css';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
 Vue.config.productionTip = false
-
+Vue.component('PrismEditor', PrismEditor);
+Vue.use(VueSweetalert2);
+Vue.use(VueToast, {
+  position: 'bottom',
+});
 new Vue({
-  render: h => h(App),
+  vuetify,
+  router,
+  render: h => h(App)
 }).$mount('#app')
